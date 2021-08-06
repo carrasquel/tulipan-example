@@ -1,1 +1,1 @@
-web: npm run serve-heroku
+web: npm run webpack && webpack serve --port 3000 --host 0.0.0.0
