@@ -1,5 +1,3 @@
-const Dotenv = require('dotenv-webpack');
-
 module.exports = {
     mode: "production",
     devServer: {
@@ -29,8 +27,5 @@ module.exports = {
                 use: [ 'script-loader' ]
             }
         ]
-    },
-    plugins: [
-        new Dotenv()
-    ]
+    }
 }
