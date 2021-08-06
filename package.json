@@ -8,7 +8,7 @@
     "build": "webpack",
     "watch": "webpack --watch",
     "heroku-prebuild": "npm install",
-    "serve": "webpack && webpack serve --hot --port 3000"
+    "serve": "webpack && node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +22,8 @@
     "@babel/preset-env": "^7.15.0",
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1",
     "html-loader": "^2.1.2",
     "script-loader": "^0.7.2",
     "style-loader": "^3.2.1",
