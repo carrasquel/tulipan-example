@@ -1,1 +1,1 @@
-webpack && webpack serve
+web: npm run webpack && webpack serve
