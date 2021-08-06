@@ -23,6 +23,7 @@
     "babel-loader": "^8.2.2",
     "css-loader": "^6.2.0",
     "dotenv-loader": "^2.0.1",
+    "dotenv-webpack": "^7.0.3",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
     "html-loader": "^2.1.2",

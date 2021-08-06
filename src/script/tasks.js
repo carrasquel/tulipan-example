@@ -1,8 +1,7 @@
 
 import html from "../views/tasks.html";
 
-const env = require('dotenv-loader');
-const backend_url = env.load("BACKEND_URL");
+const backend_url = process.env.BACKEND_URL;
 
 var tasks = new Tulipan({
     

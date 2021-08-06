@@ -1,7 +1,6 @@
 import html from "../views/signup.html";
 
-const env = require('dotenv-loader');
-const backend_url = env.load("BACKEND_URL");
+const backend_url = process.env.BACKEND_URL;
 
 var signup = new Tulipan({
     template: {
