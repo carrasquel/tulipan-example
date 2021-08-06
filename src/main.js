@@ -1,5 +1,8 @@
 import html from "./views/login.html";
 
+const env = require('dotenv-loader');
+const backend_url = env.load("BACKEND_URL");
+
 var app = new Tulipan({
     
     template: {
@@ -36,7 +39,7 @@ var app = new Tulipan({
                 password: this.password
             };
 
-            this.$http.post("http://localhost:5000/api/auth/login", payload).then(function(res){
+            this.$http.post(backend_url + "api/auth/login", payload).then(function(res){
                 // exito
                 console.log(res);
                 this.$store.set("apiKey", res.data.api_key);

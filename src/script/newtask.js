@@ -1,5 +1,8 @@
 import html from "../views/newtask.html";
 
+const env = require('dotenv-loader');
+const backend_url = env.load("BACKEND_URL");
+
 var newTask = new Tulipan({
     
     template: {
@@ -30,7 +33,7 @@ var newTask = new Tulipan({
           task: this.task
         }
   
-        this.$http.post('http://localhost:5000/api/todos/', payload, {headers: {'X-API-KEY': apiKey}})
+        this.$http.post(backend_url + 'api/todos/', payload, {headers: {'X-API-KEY': apiKey}})
         .then(function (res){
           console.log(res);
           this.$router.navigate("/tasks");

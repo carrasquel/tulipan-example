@@ -1,5 +1,8 @@
 import html from "../views/signup.html";
 
+const env = require('dotenv-loader');
+const backend_url = env.load("BACKEND_URL");
+
 var signup = new Tulipan({
     template: {
         // url: "views/signup.html",
@@ -35,7 +38,7 @@ var signup = new Tulipan({
                 email: this.email
             }
 
-            this.$http.post("http://localhost:5000/api/auth/signup", payload).then(function(res){
+            this.$http.post(backend_url + "api/auth/signup", payload).then(function(res){
                 // exito
                 console.log(res);
                 this.$router.navigate("/");

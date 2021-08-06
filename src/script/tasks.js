@@ -1,6 +1,9 @@
 
 import html from "../views/tasks.html";
 
+const env = require('dotenv-loader');
+const backend_url = env.load("BACKEND_URL");
+
 var tasks = new Tulipan({
     
   template: {
@@ -28,7 +31,7 @@ var tasks = new Tulipan({
     fetchTasks: function(){
       var apiKey = this.$store.get("apiKey");
 
-      this.$http.get('http://localhost:5000/api/todos/', {headers: {'X-API-KEY': apiKey}})
+      this.$http.get(backend_url + 'api/todos/', {headers: {'X-API-KEY': apiKey}})
       .then(function (res){
         console.log(res);
         var data = res.data;
