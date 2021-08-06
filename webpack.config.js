@@ -1,8 +1,7 @@
 module.exports = {
     mode: "production",
     devServer: {
-        contentBase: "./dist",
-        port: 3000
+        contentBase: "./dist"
     },
     module: {
         rules: [

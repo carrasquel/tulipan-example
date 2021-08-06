@@ -1,1 +1,1 @@
-web: npm run serve
+web: npm run webpack serve --hot --port $PORT
