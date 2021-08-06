@@ -1,1 +1,1 @@
-web: npm run webpack serve --hot --port $PORT
+web: npm run serve-heroku
