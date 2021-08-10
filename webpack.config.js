@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     devServer: {
         contentBase: "./dist"
     },
