@@ -5,8 +5,7 @@ import './static/js/jquery.min.exec.js';
 import './static/js/bootstrap.exec.js';
 import './static/js/bootbox.min.exec.js';
 import './static/js/tulipan.exec.js';
-
-import DialogPlugin from './script/dialogPlugin.js';
+import './script/dialogPlugin.exec.js';
 
 import app from './main.js';
 import signup from './script/signup.js';
