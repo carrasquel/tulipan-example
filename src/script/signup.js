@@ -37,12 +37,16 @@ var signup = new Tulipan({
                 email: this.email
             }
 
+            this.$dialog.show("Signing up...");
+
             this.$http.post(backend_url + "api/auth/signup", payload).then(function(res){
-                // exito
+                
                 console.log(res);
+                this.$dialog.hide();
                 this.$router.navigate("/");
             }, function(err){
-                // falla
+                
+                this.$dialog.hide();
                 console.log(err);
             });
         }

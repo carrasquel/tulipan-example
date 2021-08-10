@@ -30,12 +30,17 @@ var tasks = new Tulipan({
     fetchTasks: function(){
       var apiKey = this.$store.get("apiKey");
 
+      this.$dialog.show("Fetching tasks...");
+      
       this.$http.get(backend_url + 'api/todos/', {headers: {'X-API-KEY': apiKey}})
       .then(function (res){
         console.log(res);
         var data = res.data;
         this.$set("tasks", data);
+        this.$dialog.hide();
+
       }, function(err){
+        this.$dialog.hide();
         console.log(err);
       })
     },
@@ -45,11 +50,15 @@ var tasks = new Tulipan({
 
       var apiKey = this.$store.get("apiKey");
 
-      this.$http.delete('http://localhost:5000/api/todos/' + id, {headers: {'X-API-KEY': apiKey}})
+      this.$dialog.show("Deleting task...");
+
+      this.$http.delete(backend_url + 'api/todos/' + id, {headers: {'X-API-KEY': apiKey}})
       .then(function (res){
         console.log(res);
+        this.$dialog.hide();
         this.fetchTasks();
       }, function(err){
+        this.$dialog.hide();
         console.log(err);
       })
     },

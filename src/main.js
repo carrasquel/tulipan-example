@@ -38,14 +38,18 @@ var app = new Tulipan({
                 password: this.password
             };
 
+            this.$dialog.show("Loging in...");
+
             this.$http.post(backend_url + "api/auth/login", payload).then(function(res){
-                // exito
+
                 console.log(res);
                 this.$store.set("apiKey", res.data.api_key);
                 this.clear();
+                this.$dialog.hide();
                 this.$router.navigate("/application");
             }, function(err){
-                // falla
+                
+                this.$dialog.hide();
                 console.log(err);
             });
         }
