@@ -43,3 +43,5 @@ DialogPlugin.install = function(Tulipan) {
 
     Tulipan.prototype.$dialog = dialog;
 };
+
+export default DialogPlugin;
