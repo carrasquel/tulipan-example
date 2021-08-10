@@ -6,7 +6,7 @@ const dialog = (function() {
         try{
             setTimeout(function(){ 
                 _dialog.modal('hide')
-             }, 500);
+             }, 250);
         }
         catch(err){
             console.log(err);
