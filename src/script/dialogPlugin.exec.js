@@ -2,23 +2,32 @@
 const dialog = (function() {
     var _dialog = {};
 
-    function _show(message){
+    function _hide(){
         try{
-            _dialog = bootbox.dialog({
-                message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> ' + message + '</p>',
-                closeButton: false
-            });
+            setTimeout(function(){ 
+                _dialog.modal('hide')
+             }, 500);
         }
         catch(err){
             console.log(err);
         }
     }
 
-    function _hide(){
+    function _show(message){
+
         try{
-            setTimeout(function(){ 
-                _dialog.modal('hide')
-             }, 500);
+            _hide();
+        }
+        catch(err){
+            console.log(err);
+        }
+
+        try{
+            
+            _dialog = bootbox.dialog({
+                message: '<p class="text-center mb-0"><i class="fa fa-spin fa-cog"></i> ' + message + '</p>',
+                closeButton: false
+            });
         }
         catch(err){
             console.log(err);

@@ -17,7 +17,7 @@ var tasks = new Tulipan({
   },
 
   data: {
-    message: "Hola mundo",
+    message: " ",
     tasks: []
   },
 
