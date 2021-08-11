@@ -1,4 +1,4 @@
-`import html from "./views/main.html";`
+`import html from "../views/main.html";`
 
 `var backend_url = process.env.BACKEND_URL || "http://localhost:5000/"`
 
