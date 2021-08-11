@@ -13,7 +13,7 @@ newEvent = new Tulipan(
     event:
       name: "",
       description: "",
-      event_date: ""
+      date: ""
   methods:
     after: ->
       @event = {}
