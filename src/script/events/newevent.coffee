@@ -23,7 +23,6 @@ newEvent = new Tulipan(
       payload = event: @event
       @$dialog.show 'Adding Event...'
       @$http.post(backend_url + 'api/events/', payload, headers: 'X-API-KEY': apiKey).then ((res) ->
-        console.log res
         @$dialog.hide()
         @$router.navigate '/events'
         return

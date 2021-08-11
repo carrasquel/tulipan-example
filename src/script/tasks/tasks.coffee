@@ -20,7 +20,6 @@ tasks = new Tulipan(
       apiKey = @$store.get('apiKey')
       @$dialog.show 'Fetching tasks...'
       @$http.get(backend_url + 'api/todos/', headers: 'X-API-KEY': apiKey).then ((res) ->
-        console.log res
         data = res.data
         @$set 'tasks', data
         @$dialog.hide()
@@ -35,7 +34,6 @@ tasks = new Tulipan(
       apiKey = @$store.get('apiKey')
       @$dialog.show 'Deleting task...'
       @$http.delete(backend_url + 'api/todos/' + id, headers: 'X-API-KEY': apiKey).then ((res) ->
-        console.log res
         @$dialog.hide()
         @fetchTasks()
         return

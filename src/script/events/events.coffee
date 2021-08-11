@@ -20,7 +20,6 @@ events = new Tulipan(
       apiKey = @$store.get('apiKey')
       @$dialog.show 'Fetching events...'
       @$http.get(backend_url + 'api/events/', headers: 'X-API-KEY': apiKey).then ((res) ->
-        console.log res
         data = res.data
         @$set 'events', data
         @$dialog.hide()
@@ -35,7 +34,6 @@ events = new Tulipan(
       apiKey = @$store.get('apiKey')
       @$dialog.show 'Deleting event...'
       @$http.delete(backend_url + 'api/events/' + id, headers: 'X-API-KEY': apiKey).then ((res) ->
-        console.log res
         @$dialog.hide()
         @fetchEvents()
         return

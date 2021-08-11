@@ -1,6 +1,14 @@
 const webpack = require('webpack');
 
 module.exports = {
+    entry: {
+        main: './src/index.js',
+        vendor: './src/vendor.js',
+    },
+    output: {
+        filename: '[name].js',
+        path: __dirname + '/dist',
+    },
     mode: "production",
     devServer: {
         contentBase: "./dist"

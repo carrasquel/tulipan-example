@@ -27,7 +27,6 @@ signup = new Tulipan(
         email: @email
       @$dialog.show 'Signing up...'
       @$http.post(backend_url + 'api/auth/signup', payload).then ((res) ->
-        console.log res
         @$dialog.hide()
         @$router.navigate '/'
         return

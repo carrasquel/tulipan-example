@@ -26,7 +26,6 @@ app = new Tulipan(
         password: @password
       @$dialog.show 'Loging in...'
       @$http.post(backend_url + 'api/auth/login', payload).then ((res) ->
-        console.log res
         @$store.set 'apiKey', res.data.api_key
         @clear()
         @$dialog.hide()
