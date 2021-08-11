@@ -19,7 +19,7 @@ events = new Tulipan(
     fetchEvents: ->
       apiKey = @$store.get('apiKey')
       @$dialog.show 'Fetching events...'
-      @$http.get(backend_url + 'api/todos/', headers: 'X-API-KEY': apiKey).then ((res) ->
+      @$http.get(backend_url + 'api/events/', headers: 'X-API-KEY': apiKey).then ((res) ->
         console.log res
         data = res.data
         @$set 'events', data
