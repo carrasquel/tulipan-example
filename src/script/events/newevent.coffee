@@ -9,12 +9,16 @@ newEvent = new Tulipan(
   route:
     route: '/newevent'
     main: '#application'
-  data: event: {}
+  data: 
+    event:
+      name: "",
+      description: "",
+      event_date: ""
   methods:
     after: ->
       @event = {}
       return
-    pushTask: ->
+    pushEvent: ->
       apiKey = @$store.get('apiKey')
       payload = event: @event
       @$dialog.show 'Adding Event...'

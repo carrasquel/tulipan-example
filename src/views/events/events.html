@@ -12,42 +12,20 @@
           <table class="table">
             <tr>
               <th>#</th>
-              <th>Nombre</th>
-              <th>Descripcion</th>
-              <th>Fecha</th>
-              <th>Acciones</th>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Date</th>
+              <th>Actions</th>
             </tr>
-            <tr>
-              <td>1</td>
-              <td>Cumpleaños Madre</td>
-              <td>Celebración cumpleaños</td>
-              <td>17/01/2020</td>
+            <tr tp-for="(index, event) in events">
+              <td>{{ index + 1 }}</td>
+              <td>{{ event.name }}</td>
+              <td>{{ event.description }}</td>
+              <td>{{ event.event_date }}</td>
               <td>
-                <a href="javascript.void(0)">Editar</a>
+                <a href="javascript.void(0)">Edit</a>
                 <span> - </span>
-                <a href="javascript.void(0)">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Cumpleaños Padre</td>
-              <td>Celebración cumpleaños</td>
-              <td>21/08/2020</td>
-              <td>
-                <a href="javascript.void(0)">Editar</a>
-                <span> - </span>
-                <a href="javascript.void(0)">Eliminar</a>
-              </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Cumpleaños Hermana</td>
-              <td>Celebración cumpleaños</td>
-              <td>27/10/2020</td>
-              <td>
-                <a href="javascript.void(0)">Editar</a>
-                <span> - </span>
-                <a href="javascript.void(0)">Eliminar</a>
+                <a href="javascript.void(0)">Delete</a>
               </td>
             </tr>
           </table>
