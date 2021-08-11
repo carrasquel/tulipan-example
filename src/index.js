@@ -1,6 +1,6 @@
 import css from "./static/css/styles.css";
 
-import app from "coffee-loader!./main.coffee";
+import app from "coffee-loader!./script/main.coffee";
 import signup from "coffee-loader!./script/signup.coffee";
 import application from "coffee-loader!./script/app.coffee";
 
