@@ -7,8 +7,12 @@ import './static/js/bootbox.min.exec.js';
 import './static/js/tulipan.exec.js';
 import './script/dialogPlugin.exec.js';
 
-import app from './main.js';
-import signup from './script/signup.js';
-import application from './script/app.js';
-import tasks from './script/tasks.js';
-import newTask from './script/newtask.js';
+import app from "coffee-loader!./main.coffee";
+import signup from "coffee-loader!./script/signup.coffee";
+import application from "coffee-loader!./script/app.coffee";
+
+import tasks from "coffee-loader!./script/tasks/tasks.coffee";
+import newTask from "coffee-loader!./script/tasks/newtask.coffee";
+
+import events from "coffee-loader!./script/events/events.coffee";
+import newEvent from "coffee-loader!./script/events/newevent.coffee";
