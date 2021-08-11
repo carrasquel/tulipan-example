@@ -1,6 +1,6 @@
 `import html from "../views/signup.html";`
 
-`var backend_url = process.env.BACKEND_URL`
+`var backend_url = process.env.BACKEND_URL || "http://localhost:5000/"`
 
 signup = new Tulipan(
   template:

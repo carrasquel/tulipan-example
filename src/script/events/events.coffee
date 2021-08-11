@@ -1,28 +1,28 @@
-`import html from "../views/tasks.html";`
+`import html from "../../views/events/events.html";`
 
-`var backend_url = process.env.BACKEND_URL`
+`var backend_url = process.env.BACKEND_URL || "http://localhost:5000/"`
 
-tasks = new Tulipan(
+events = new Tulipan(
   template:
     html: html
     async: false
   route:
-    route: '/tasks'
+    route: '/events'
     main: '#application'
   data:
     message: 'Hola mundo'
-    tasks: []
+    events: []
   methods:
     after: ->
-      @fetchTasks()
+      @fetchEvents()
       return
-    fetchTasks: ->
+    fetchEvents: ->
       apiKey = @$store.get('apiKey')
-      @$dialog.show 'Fetching tasks...'
+      @$dialog.show 'Fetching events...'
       @$http.get(backend_url + 'api/todos/', headers: 'X-API-KEY': apiKey).then ((res) ->
         console.log res
         data = res.data
-        @$set 'tasks', data
+        @$set 'events', data
         @$dialog.hide()
         return
       ), (err) ->
@@ -30,21 +30,21 @@ tasks = new Tulipan(
         console.log err
         return
       return
-    deleteTask: (index) ->
-      id = @tasks[index].id
+    deleteEvent: (index) ->
+      id = @events[index].id
       apiKey = @$store.get('apiKey')
-      @$dialog.show 'Deleting task...'
-      @$http.delete(backend_url + 'api/todos/' + id, headers: 'X-API-KEY': apiKey).then ((res) ->
+      @$dialog.show 'Deleting event...'
+      @$http.delete(backend_url + 'api/events/' + id, headers: 'X-API-KEY': apiKey).then ((res) ->
         console.log res
         @$dialog.hide()
-        @fetchTasks()
+        @fetchEvents()
         return
       ), (err) ->
         @$dialog.hide()
         console.log err
         return
       return
-    createTask: ->
-      @$router.navigate '/newtask'
+    createEvent: ->
+      @$router.navigate '/newevent'
       return
 )

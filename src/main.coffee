@@ -1,6 +1,6 @@
-`import html from "./views/login.html";`
+`import html from "./views/main.html";`
 
-`var backend_url = process.env.BACKEND_URL`
+`var backend_url = process.env.BACKEND_URL || "http://localhost:5000/"`
 
 app = new Tulipan(
   template:
